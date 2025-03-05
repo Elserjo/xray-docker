@@ -1,0 +1,16 @@
+services:
+  xray-core:
+    image: ghcr.io/xtls/xray-core:25.2.21@sha256:02a727a08a08e8019d91b9377566449c4824a4946316d5a859fd38eed152258f
+    ports: 
+      - "443:443"
+    container_name: xray-core
+    volumes:
+      - type: bind
+        source: /usr/local/etc/xray/config.json
+        target: /etc/xray/xray.json
+        read_only: true 
+    restart: always
+    environment:
+      - TZ=Europe/Moscow
+    healthcheck:
+      test: ["CMD", "xray", "-test", "-format", "json", "-config", "/etc/xray/xray.json"]
