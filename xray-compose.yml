@@ -6,7 +6,7 @@ services:
     container_name: xray-core
     volumes:
       - type: bind
-        source: /usr/local/etc/xray/config.json
+        source: /etc/xray/xray.json
         target: /etc/xray/xray.json
         read_only: true 
     restart: always
