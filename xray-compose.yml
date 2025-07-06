@@ -7,10 +7,10 @@ services:
     volumes:
       - type: bind
         source: /etc/xray/xray.json
-        target: /etc/xray/xray.json
+        target: /usr/local/etc/xray/xray.json
         read_only: true 
     restart: always
     environment:
       - TZ=Europe/Moscow
     healthcheck:
-      test: ["CMD", "xray", "-test", "-format", "json", "-config", "/etc/xray/xray.json"]
+      test: ["CMD", "xray", "-test", "-format", "json", "-config", "/usr/local/etc/xray/xray.json"]
