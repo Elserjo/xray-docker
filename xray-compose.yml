@@ -1,6 +1,6 @@
 services:
   xray-core:
-    image: ghcr.io/xtls/xray-core:25.8.3@sha256:550bfea90db02b4edf7c2ddec88b5c41da7f2a9ea54dbf553003e138db8eb7c4
+    image: ghcr.io/xtls/xray-core:25.9.5@sha256:f0c2a6e6afa6b01dc1057917ce18ec7f0b6ae9a15af3976382aa89c109d6592d
     ports: 
       - "443:443"
     container_name: xray-core
